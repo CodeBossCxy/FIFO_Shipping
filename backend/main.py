@@ -12,8 +12,13 @@ import pandas as pd
 
 app = FastAPI()
 
-# --- Serve Frontend Static Files ---
-# app.mount("/", StaticFiles(directory="../frontend", html=True), name="frontend")
+# Get absolute path to the frontend directory
+frontend_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../frontend"))
+
+if not os.path.exists(frontend_path):
+    raise RuntimeError(f"Frontend directory not found at: {frontend_path}")
+
+app.mount("/app", StaticFiles(directory=frontend_path, html=True), name="frontend")
 
 # --- Config ---
 ERP_API_BASE = "https://Vintech.on.plex.com/api/datasources/"
@@ -25,7 +30,7 @@ headers = {
 now = datetime.today()
 
 # --- Mock In-Memory Store (can be replaced with DB) ---
-valid_shippers = {}
+valid_shippers = {}  
 valid_serials = {}
 
 # --- Pydantic Models ---
@@ -89,9 +94,7 @@ def fetch_valid_shippers_from_erp(begin_date: datetime, end_date: datetime) -> L
     
 
 def get_open_shippers(shippers: pd.DataFrame) -> List[str]:
-    # print(shippers)
     shippers = shippers[shippers["Shipper_Status"] == "Open"]
-    print(shippers)
     return shippers
 
 def update_erp_with_load(shipper_number: str, container_serial: str) -> bool:
@@ -113,7 +116,6 @@ async def get_valid_shippers():
     begin_date = now - timedelta(days = 31)
     end_date = now + timedelta(days = 31)
     shippers  = fetch_valid_shippers_from_erp(begin_date, end_date)
-    # print(shippers)
     open_shippers = get_open_shippers(shippers)
-    # valid_shippers["shippers"] = shippers
-    # return {"status": "success", "shippers": shippers}
+    print(open_shippers['Shipper_No'].tolist())
+    return open_shippers['Shipper_No'].tolist()
