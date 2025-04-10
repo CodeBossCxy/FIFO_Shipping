@@ -1,0 +1,1205 @@
+shipper_demand:  {'2678456': 10000}
+[get_valid_containers] demand:  ('2678456', 10000)
+200
+[get_valid_containers] all_containers: 
+    Part_Key  Containers  Part_Operation_Key    Part_No Revision  \
+30   2678456         1.0             9551918  SEA822882        A   
+31   2678456         1.0             9551918  SEA822882        A   
+32   2678456         1.0             9551918  SEA822882        A   
+33   2678456         1.0             9551918  SEA822882        A   
+34   2678456         1.0             9551918  SEA822882        A   
+35   2678456         1.0             9551918  SEA822882        A   
+36   2678456         1.0             9551918  SEA822882        A   
+37   2678456         1.0             9551918  SEA822882        A   
+38   2678456         1.0             9551918  SEA822882        A   
+39   2678456         1.0             9551918  SEA822882        A   
+40   2678456         1.0             9551918  SEA822882        A   
+41   2678456         1.0             9551918  SEA822882        A   
+62   2678456         1.0             9551918  SEA822882        A   
+63   2678456         1.0             9551918  SEA822882        A   
+64   2678456         1.0             9551918  SEA822882        A   
+65   2678456         1.0             9551918  SEA822882        A   
+66   2678456         1.0             9551918  SEA822882        A   
+67   2678456         1.0             9551918  SEA822882        A   
+68   2678456         1.0             9551918  SEA822882        A   
+69   2678456         1.0             9551918  SEA822882        A   
+70   2678456         1.0             9551918  SEA822882        A   
+71   2678456         1.0             9551918  SEA822882        A   
+8    2678456         1.0             9551918  SEA822882        A   
+2    2678456         1.0             9551918  SEA822882        A   
+9    2678456         1.0             9551918  SEA822882        A   
+11   2678456         1.0             9551918  SEA822882        A   
+10   2678456         1.0             9551918  SEA822882        A   
+12   2678456         1.0             9551918  SEA822882        A   
+13   2678456         1.0             9551918  SEA822882        A   
+14   2678456         1.0             9551918  SEA822882        A   
+15   2678456         1.0             9551918  SEA822882        A   
+16   2678456         1.0             9551918  SEA822882        A   
+17   2678456         1.0             9551918  SEA822882        A   
+18   2678456         1.0             9551918  SEA822882        A   
+19   2678456         1.0             9551918  SEA822882        A   
+6    2678456         1.0             9551918  SEA822882        A   
+20   2678456         1.0             9551918  SEA822882        A   
+21   2678456         1.0             9551918  SEA822882        A   
+22   2678456         1.0             9551918  SEA822882        A   
+23   2678456         1.0             9551918  SEA822882        A   
+24   2678456         1.0             9551918  SEA822882        A   
+25   2678456         1.0             9551918  SEA822882        A   
+26   2678456         1.0             9551918  SEA822882        A   
+27   2678456         1.0             9551918  SEA822882        A   
+28   2678456         1.0             9551918  SEA822882        A   
+29   2678456         1.0             9551918  SEA822882        A   
+42   2678456         1.0             9551918  SEA822882        A   
+7    2678456         1.0             9551918  SEA822882        A   
+43   2678456         1.0             9551918  SEA822882        A   
+44   2678456         1.0             9551918  SEA822882        A   
+45   2678456         1.0             9551918  SEA822882        A   
+46   2678456         1.0             9551918  SEA822882        A   
+47   2678456         1.0             9551918  SEA822882        A   
+48   2678456         1.0             9551918  SEA822882        A   
+49   2678456         1.0             9551918  SEA822882        A   
+50   2678456         1.0             9551918  SEA822882        A   
+51   2678456         1.0             9551918  SEA822882        A   
+53   2678456         1.0             9551918  SEA822882        A   
+52   2678456         1.0             9551918  SEA822882        A   
+54   2678456         1.0             9551918  SEA822882        A   
+55   2678456         1.0             9551918  SEA822882        A   
+56   2678456         1.0             9551918  SEA822882        A   
+57   2678456         1.0             9551918  SEA822882        A   
+58   2678456         1.0             9551918  SEA822882        A   
+59   2678456         1.0             9551918  SEA822882        A   
+60   2678456         1.0             9551918  SEA822882        A   
+61   2678456         1.0             9551918  SEA822882        A   
+
+               Name       Operation_Code  Operation_No Material_Key Heat_Key  \
+30  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+31  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+32  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+33  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+34  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+35  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+36  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+37  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+38  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+39  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+40  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+41  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+62  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+63  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+64  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+65  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+66  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+67  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+68  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+69  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+70  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+71  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+8   GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+2   GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+9   GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+11  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+10  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+12  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+13  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+14  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+15  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+16  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+17  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+18  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+19  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+6   GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+20  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+21  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+22  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+23  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+24  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+25  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+26  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+27  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+28  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+29  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+42  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+7   GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+43  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+44  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+45  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+46  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+47  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+48  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+49  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+50  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+51  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+53  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+52  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+54  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+55  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+56  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+57  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+58  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+59  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+60  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+61  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+
+   Serial_No Card_No Material_Code Heat_Code Heat_No  Quantity  Net_Weight  \
+30  V1808665    None          None      None    None    2000.0         4.0   
+31  V1808674    None          None      None    None    2000.0         4.0   
+32  V1808696    None          None      None    None    2000.0         4.0   
+33  V1808730    None          None      None    None    2000.0         4.0   
+34  V1808775    None          None      None    None    2000.0         4.0   
+35  V1808848    None          None      None    None    2000.0         4.0   
+36  V1808849    None          None      None    None    2000.0         4.0   
+37  V1808878    None          None      None    None    2000.0         4.0   
+38  V1808999    None          None      None    None    2000.0         4.0   
+39  V1809288    None          None      None    None    2000.0         4.0   
+40  V1809318    None          None      None    None    2000.0         4.0   
+41  V1809348    None          None      None    None    2000.0         4.0   
+62  V1809397    None          None      None    None    2000.0         4.0   
+63  V1809413    None          None      None    None    2000.0         4.0   
+64  V1809468    None          None      None    None    2000.0         4.0   
+65  V1809534    None          None      None    None    2000.0         4.0   
+66  V1809630    None          None      None    None    2000.0         4.0   
+67  V1809677    None          None      None    None    2000.0         4.0   
+68  V1809687    None          None      None    None    2000.0         4.0   
+69  V1809759    None          None      None    None    2000.0         4.0   
+70  V1809789    None          None      None    None    2000.0         4.0   
+71  V1809806    None          None      None    None    2000.0         4.0   
+8   V1838757    None          None      None    None    2000.0         4.0   
+2   V1838782    None          None      None    None    2000.0         4.0   
+9   V1838811    None          None      None    None    2000.0         4.0   
+11  V1838899    None          None      None    None    2000.0         4.0   
+10  V1838898    None          None      None    None    2000.0         4.0   
+12  V1838935    None          None      None    None    2000.0         4.0   
+13  V1838974    None          None      None    None    2000.0         4.0   
+14  V1838999    None          None      None    None    2000.0         4.0   
+15  V1839029    None          None      None    None    2000.0         4.0   
+16  V1839079    None          None      None    None    2000.0         4.0   
+17  V1839102    None          None      None    None    2000.0         4.0   
+18  V1839173    None          None      None    None    2000.0         4.0   
+19  V1839187    None          None      None    None    2000.0         4.0   
+6   V1839213    None          None      None    None    2000.0         4.0   
+20  V1839277    None          None      None    None    2000.0         4.0   
+21  V1839311    None          None      None    None    2000.0         4.0   
+22  V1839388    None          None      None    None    2000.0         4.0   
+23  V1839430    None          None      None    None    2000.0         4.0   
+24  V1839468    None          None      None    None    2000.0         4.0   
+25  V1839507    None          None      None    None    2000.0         4.0   
+26  V1839554    None          None      None    None    2000.0         4.0   
+27  V1839555    None          None      None    None    2000.0         4.0   
+28  V1839556    None          None      None    None    2000.0         4.0   
+29  V1839569    None          None      None    None    2000.0         4.0   
+42  V1839576    None          None      None    None    2000.0         4.0   
+7   V1839589    None          None      None    None    2000.0         4.0   
+43  V1839596    None          None      None    None    2000.0         4.0   
+44  V1839601    None          None      None    None    2000.0         4.0   
+45  V1839605    None          None      None    None    2000.0         4.0   
+46  V1839618    None          None      None    None    2000.0         4.0   
+47  V1839631    None          None      None    None    2000.0         4.0   
+48  V1839643    None          None      None    None    2000.0         4.0   
+49  V1839644    None          None      None    None    2000.0         4.0   
+50  V1839649    None          None      None    None    2000.0         4.0   
+51  V1839655    None          None      None    None    2000.0         4.0   
+53  V1839676    None          None      None    None    2000.0         4.0   
+52  V1839675    None          None      None    None    2000.0         4.0   
+54  V1839684    None          None      None    None    2000.0         4.0   
+55  V1839693    None          None      None    None    2000.0         4.0   
+56  V1839704    None          None      None    None    2000.0         4.0   
+57  V1839710    None          None      None    None    2000.0         4.0   
+58  V1839722    None          None      None    None    2000.0         4.0   
+59  V1839736    None          None      None    None    2000.0         4.0   
+60  V1839745    None          None      None    None    2000.0         4.0   
+61  V1839757    None          None      None    None    2000.0         4.0   
+
+        Location Container_Type Container_Status Note  \
+30  Warehouse-08                              OK        
+31  Warehouse-08                              OK        
+32  Warehouse-08                              OK        
+33  Warehouse-08                              OK        
+34  Warehouse-08                              OK        
+35  Warehouse-08                              OK        
+36  Warehouse-08                              OK        
+37  Warehouse-08                              OK        
+38  Warehouse-08                              OK        
+39  Warehouse-08                              OK        
+40  Warehouse-08                              OK        
+41  Warehouse-08                              OK        
+62  Warehouse-08                              OK        
+63  Warehouse-08                              OK        
+64  Warehouse-08                              OK        
+65  Warehouse-08                              OK        
+66  Warehouse-08                              OK        
+67  Warehouse-08                              OK        
+68  Warehouse-08                              OK        
+69  Warehouse-08                              OK        
+70  Warehouse-08                              OK        
+71  Warehouse-08                              OK        
+8   Warehouse-07                              OK        
+2            040                              OK        
+9   Warehouse-07                              OK        
+11  Warehouse-07                              OK        
+10  Warehouse-07                              OK        
+12  Warehouse-07                              OK        
+13  Warehouse-07                              OK        
+14  Warehouse-07                              OK        
+15  Warehouse-07                              OK        
+16  Warehouse-07                              OK        
+17  Warehouse-07                              OK        
+18  Warehouse-07                              OK        
+19  Warehouse-07                              OK        
+6            040                              OK        
+20  Warehouse-07                              OK        
+21  Warehouse-07                              OK        
+22  Warehouse-07                              OK        
+23  Warehouse-07                              OK        
+24  Warehouse-07                              OK        
+25  Warehouse-07                              OK        
+26  Warehouse-07                              OK        
+27  Warehouse-07                              OK        
+28  Warehouse-07                              OK        
+29  Warehouse-07                              OK        
+42  Warehouse-07                              OK        
+7            040                              OK        
+43  Warehouse-07                              OK        
+44  Warehouse-07                              OK        
+45  Warehouse-07                              OK        
+46  Warehouse-07                              OK        
+47  Warehouse-07                              OK        
+48  Warehouse-07                              OK        
+49  Warehouse-07                              OK        
+50  Warehouse-07                              OK        
+51  Warehouse-07                              OK        
+53  Warehouse-07                              OK        
+52  Warehouse-07                              OK        
+54  Warehouse-07                              OK        
+55  Warehouse-07                              OK        
+56  Warehouse-07                              OK        
+57  Warehouse-07                              OK        
+58  Warehouse-07                              OK        
+59  Warehouse-07                              OK        
+60  Warehouse-07                              OK        
+61  Warehouse-07                              OK        
+
+    Shipper_Container_Exists Lot_No         Operation_Type Defect_Type  \
+30                         0         Production-Simplified               
+31                         0         Production-Simplified               
+32                         0         Production-Simplified               
+33                         0         Production-Simplified               
+34                         0         Production-Simplified               
+35                         0         Production-Simplified               
+36                         0         Production-Simplified               
+37                         0         Production-Simplified               
+38                         0         Production-Simplified               
+39                         0         Production-Simplified               
+40                         0         Production-Simplified               
+41                         0         Production-Simplified               
+62                         0         Production-Simplified               
+63                         0         Production-Simplified               
+64                         0         Production-Simplified               
+65                         0         Production-Simplified               
+66                         0         Production-Simplified               
+67                         0         Production-Simplified               
+68                         0         Production-Simplified               
+69                         0         Production-Simplified               
+70                         0         Production-Simplified               
+71                         0         Production-Simplified               
+8                          0         Production-Simplified               
+2                          0         Production-Simplified               
+9                          0         Production-Simplified               
+11                         0         Production-Simplified               
+10                         0         Production-Simplified               
+12                         0         Production-Simplified               
+13                         0         Production-Simplified               
+14                         0         Production-Simplified               
+15                         0         Production-Simplified               
+16                         0         Production-Simplified               
+17                         0         Production-Simplified               
+18                         0         Production-Simplified               
+19                         0         Production-Simplified               
+6                          0         Production-Simplified               
+20                         0         Production-Simplified               
+21                         0         Production-Simplified               
+22                         0         Production-Simplified               
+23                         0         Production-Simplified               
+24                         0         Production-Simplified               
+25                         0         Production-Simplified               
+26                         0         Production-Simplified               
+27                         0         Production-Simplified               
+28                         0         Production-Simplified               
+29                         0         Production-Simplified               
+42                         0         Production-Simplified               
+7                          0         Production-Simplified               
+43                         0         Production-Simplified               
+44                         0         Production-Simplified               
+45                         0         Production-Simplified               
+46                         0         Production-Simplified               
+47                         0         Production-Simplified               
+48                         0         Production-Simplified               
+49                         0         Production-Simplified               
+50                         0         Production-Simplified               
+51                         0         Production-Simplified               
+53                         0         Production-Simplified               
+52                         0         Production-Simplified               
+54                         0         Production-Simplified               
+55                         0         Production-Simplified               
+56                         0         Production-Simplified               
+57                         0         Production-Simplified               
+58                         0         Production-Simplified               
+59                         0         Production-Simplified               
+60                         0         Production-Simplified               
+61                         0         Production-Simplified               
+
+                                              Program  Active Job_No    Color  \
+30  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+31  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+32  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+33  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+34  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+35  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+36  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+37  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+38  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+39  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+40  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+41  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+62  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+63  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+64  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+65  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+66  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+67  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+68  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+69  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+70  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+71  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+8   ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+2   ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+9   ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+11  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+10  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+12  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+13  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+14  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+15  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+16  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+17  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+18  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+19  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+6   ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+20  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+21  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+22  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+23  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+24  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+25  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+26  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+27  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+28  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+29  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+42  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+7   ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+43  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+44  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+45  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+46  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+47  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+48  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+49  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+50  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+51  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+53  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+52  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+54  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+55  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+56  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+57  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+58  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+59  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+60  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+61  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32512  #D2F3CF   
+
+   Unit   Job_Key Customer_Part_No        Part_Name Tracking_No Linear_Weight  \
+30   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+31   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+32   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+33   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+34   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+35   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+36   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+37   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+38   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+39   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+40   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+41   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+62   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+63   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+64   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+65   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+66   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+67   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+68   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+69   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+70   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+71   Ea   9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+8    Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+2    Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+9    Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+11   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+10   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+12   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+13   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+14   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+15   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+16   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+17   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+18   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+19   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+6    Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+20   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+21   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+22   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+23   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+24   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+25   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+26   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+27   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+28   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+29   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+42   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+7    Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+43   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+44   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+45   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+46   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+47   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+48   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+49   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+50   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+51   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250408          None   
+53   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250409          None   
+52   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250409          None   
+54   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250409          None   
+55   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250409          None   
+56   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250409          None   
+57   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250409          None   
+58   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250409          None   
+59   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250409          None   
+60   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250409          None   
+61   Ea  10017838     INOAC CANADA  GIMP SHORT SEAL      250409          None   
+
+   Expiration_Date Accounting_Job_No Accounting_Job_Status  \
+30            None              None                  None   
+31            None              None                  None   
+32            None              None                  None   
+33            None              None                  None   
+34            None              None                  None   
+35            None              None                  None   
+36            None              None                  None   
+37            None              None                  None   
+38            None              None                  None   
+39            None              None                  None   
+40            None              None                  None   
+41            None              None                  None   
+62            None              None                  None   
+63            None              None                  None   
+64            None              None                  None   
+65            None              None                  None   
+66            None              None                  None   
+67            None              None                  None   
+68            None              None                  None   
+69            None              None                  None   
+70            None              None                  None   
+71            None              None                  None   
+8             None              None                  None   
+2             None              None                  None   
+9             None              None                  None   
+11            None              None                  None   
+10            None              None                  None   
+12            None              None                  None   
+13            None              None                  None   
+14            None              None                  None   
+15            None              None                  None   
+16            None              None                  None   
+17            None              None                  None   
+18            None              None                  None   
+19            None              None                  None   
+6             None              None                  None   
+20            None              None                  None   
+21            None              None                  None   
+22            None              None                  None   
+23            None              None                  None   
+24            None              None                  None   
+25            None              None                  None   
+26            None              None                  None   
+27            None              None                  None   
+28            None              None                  None   
+29            None              None                  None   
+42            None              None                  None   
+7             None              None                  None   
+43            None              None                  None   
+44            None              None                  None   
+45            None              None                  None   
+46            None              None                  None   
+47            None              None                  None   
+48            None              None                  None   
+49            None              None                  None   
+50            None              None                  None   
+51            None              None                  None   
+53            None              None                  None   
+52            None              None                  None   
+54            None              None                  None   
+55            None              None                  None   
+56            None              None                  None   
+57            None              None                  None   
+58            None              None                  None   
+59            None              None                  None   
+60            None              None                  None   
+61            None              None                  None   
+
+   Accounting_Job_Status_Color              Add_Date  Inventory_Type  \
+30                        None  2025-02-25T09:37:00Z           False   
+31                        None  2025-02-25T09:45:00Z           False   
+32                        None  2025-02-25T10:22:00Z           False   
+33                        None  2025-02-25T10:49:00Z           False   
+34                        None  2025-02-25T11:31:00Z           False   
+35                        None  2025-02-25T12:34:00Z           False   
+36                        None  2025-02-25T12:34:00Z           False   
+37                        None  2025-02-25T13:04:00Z           False   
+38                        None  2025-02-25T14:31:00Z           False   
+39                        None  2025-02-25T17:40:00Z           False   
+40                        None  2025-02-25T18:05:00Z           False   
+41                        None  2025-02-25T18:29:00Z           False   
+62                        None  2025-02-25T19:00:00Z           False   
+63                        None  2025-02-25T19:15:00Z           False   
+64                        None  2025-02-25T19:18:00Z           False   
+65                        None  2025-02-25T19:20:00Z           False   
+66                        None  2025-02-25T19:47:00Z           False   
+67                        None  2025-02-25T20:29:00Z           False   
+68                        None  2025-02-25T20:41:00Z           False   
+69                        None  2025-02-25T21:14:00Z           False   
+70                        None  2025-02-25T21:47:00Z           False   
+71                        None  2025-02-25T22:18:00Z           False   
+8                         None  2025-04-08T11:39:00Z           False   
+2                         None  2025-04-08T12:07:00Z           False   
+9                         None  2025-04-08T12:37:00Z           False   
+11                        None  2025-04-08T13:37:00Z           False   
+10                        None  2025-04-08T13:37:00Z           False   
+12                        None  2025-04-08T14:05:00Z           False   
+13                        None  2025-04-08T14:42:00Z           False   
+14                        None  2025-04-08T15:05:00Z           False   
+15                        None  2025-04-08T15:31:00Z           False   
+16                        None  2025-04-08T16:03:00Z           False   
+17                        None  2025-04-08T16:29:00Z           False   
+18                        None  2025-04-08T17:11:00Z           False   
+19                        None  2025-04-08T17:22:00Z           False   
+6                         None  2025-04-08T17:49:00Z           False   
+20                        None  2025-04-08T18:16:00Z           False   
+21                        None  2025-04-08T18:45:00Z           False   
+22                        None  2025-04-08T19:36:00Z           False   
+23                        None  2025-04-08T19:57:00Z           False   
+24                        None  2025-04-08T20:19:00Z           False   
+25                        None  2025-04-08T20:50:00Z           False   
+26                        None  2025-04-08T22:24:00Z           False   
+27                        None  2025-04-08T22:24:00Z           False   
+28                        None  2025-04-08T22:24:00Z           False   
+29                        None  2025-04-08T22:55:00Z           False   
+42                        None  2025-04-08T23:19:00Z           False   
+7                         None  2025-04-08T23:54:00Z           False   
+43                        None  2025-04-09T00:19:00Z           False   
+44                        None  2025-04-09T00:45:00Z           False   
+45                        None  2025-04-09T01:00:00Z           False   
+46                        None  2025-04-09T01:32:00Z           False   
+47                        None  2025-04-09T02:10:00Z           False   
+48                        None  2025-04-09T02:59:00Z           False   
+49                        None  2025-04-09T02:59:00Z           False   
+50                        None  2025-04-09T03:25:00Z           False   
+51                        None  2025-04-09T04:06:00Z           False   
+53                        None  2025-04-09T05:27:00Z           False   
+52                        None  2025-04-09T05:27:00Z           False   
+54                        None  2025-04-09T05:40:00Z           False   
+55                        None  2025-04-09T06:12:00Z           False   
+56                        None  2025-04-09T06:50:00Z           False   
+57                        None  2025-04-09T07:07:00Z           False   
+58                        None  2025-04-09T07:37:00Z           False   
+59                        None  2025-04-09T08:05:00Z           False   
+60                        None  2025-04-09T08:33:00Z           False   
+61                        None  2025-04-09T08:59:00Z           False   
+
+   Job_Template  Job_Template_No Job_Template_Status Supplier_Code  \
+30                            -1                                     
+31                            -1                                     
+32                            -1                                     
+33                            -1                                     
+34                            -1                                     
+35                            -1                                     
+36                            -1                                     
+37                            -1                                     
+38                            -1                                     
+39                            -1                                     
+40                            -1                                     
+41                            -1                                     
+62                            -1                                     
+63                            -1                                     
+64                            -1                                     
+65                            -1                                     
+66                            -1                                     
+67                            -1                                     
+68                            -1                                     
+69                            -1                                     
+70                            -1                                     
+71                            -1                                     
+8                             -1                                     
+2                             -1                                     
+9                             -1                                     
+11                            -1                                     
+10                            -1                                     
+12                            -1                                     
+13                            -1                                     
+14                            -1                                     
+15                            -1                                     
+16                            -1                                     
+17                            -1                                     
+18                            -1                                     
+19                            -1                                     
+6                             -1                                     
+20                            -1                                     
+21                            -1                                     
+22                            -1                                     
+23                            -1                                     
+24                            -1                                     
+25                            -1                                     
+26                            -1                                     
+27                            -1                                     
+28                            -1                                     
+29                            -1                                     
+42                            -1                                     
+7                             -1                                     
+43                            -1                                     
+44                            -1                                     
+45                            -1                                     
+46                            -1                                     
+47                            -1                                     
+48                            -1                                     
+49                            -1                                     
+50                            -1                                     
+51                            -1                                     
+53                            -1                                     
+52                            -1                                     
+54                            -1                                     
+55                            -1                                     
+56                            -1                                     
+57                            -1                                     
+58                            -1                                     
+59                            -1                                     
+60                            -1                                     
+61                            -1                                     
+
+    Job_Allocation_Key  Part_Count  Master_Unit_Key Master_Unit_No  \
+30                  -1           0       10436543.0        M043739   
+31                  -1           0       10436543.0        M043739   
+32                  -1           0       10436543.0        M043739   
+33                  -1           0       10436543.0        M043739   
+34                  -1           0       10436543.0        M043739   
+35                  -1           0       10436543.0        M043739   
+36                  -1           0       10436543.0        M043739   
+37                  -1           0       10436543.0        M043739   
+38                  -1           0       10436543.0        M043739   
+39                  -1           0       10436543.0        M043739   
+40                  -1           0       10436543.0        M043739   
+41                  -1           0       10436543.0        M043739   
+62                  -1           0       10436543.0        M043739   
+63                  -1           0       10436543.0        M043739   
+64                  -1           0       10436543.0        M043739   
+65                  -1           0       10436543.0        M043739   
+66                  -1           0       10436543.0        M043739   
+67                  -1           0       10436543.0        M043739   
+68                  -1           0       10436543.0        M043739   
+69                  -1           0       10436543.0        M043739   
+70                  -1           0       10436543.0        M043739   
+71                  -1           0       10436543.0        M043739   
+8                   -1           0       10547420.0        M044839   
+2                   -1           0              NaN           None   
+9                   -1           0       10547420.0        M044839   
+11                  -1           0       10547420.0        M044839   
+10                  -1           0       10547420.0        M044839   
+12                  -1           0       10547420.0        M044839   
+13                  -1           0       10547420.0        M044839   
+14                  -1           0       10547420.0        M044839   
+15                  -1           0       10547420.0        M044839   
+16                  -1           0       10547420.0        M044839   
+17                  -1           0       10547420.0        M044839   
+18                  -1           0       10547420.0        M044839   
+19                  -1           0       10547420.0        M044839   
+6                   -1           0              NaN           None   
+20                  -1           0       10547420.0        M044839   
+21                  -1           0       10547420.0        M044839   
+22                  -1           0       10547420.0        M044839   
+23                  -1           0       10547420.0        M044839   
+24                  -1           0       10547420.0        M044839   
+25                  -1           0       10547420.0        M044839   
+26                  -1           0       10547420.0        M044839   
+27                  -1           0       10547420.0        M044839   
+28                  -1           0       10547420.0        M044839   
+29                  -1           0       10547420.0        M044839   
+42                  -1           0       10547420.0        M044839   
+7                   -1           0              NaN           None   
+43                  -1           0       10547420.0        M044839   
+44                  -1           0       10547420.0        M044839   
+45                  -1           0       10547420.0        M044839   
+46                  -1           0       10547420.0        M044839   
+47                  -1           0       10547420.0        M044839   
+48                  -1           0       10547420.0        M044839   
+49                  -1           0       10547420.0        M044839   
+50                  -1           0       10547420.0        M044839   
+51                  -1           0       10547420.0        M044839   
+53                  -1           0       10547420.0        M044839   
+52                  -1           0       10547420.0        M044839   
+54                  -1           0       10547420.0        M044839   
+55                  -1           0       10547420.0        M044839   
+56                  -1           0       10547420.0        M044839   
+57                  -1           0       10547420.0        M044839   
+58                  -1           0       10547420.0        M044839   
+59                  -1           0       10547420.0        M044839   
+60                  -1           0       10547420.0        M044839   
+61                  -1           0       10547420.0        M044839   
+
+   Manufactured_Date Piece_Count EUN  
+30              None        None      
+31              None        None      
+32              None        None      
+33              None        None      
+34              None        None      
+35              None        None      
+36              None        None      
+37              None        None      
+38              None        None      
+39              None        None      
+40              None        None      
+41              None        None      
+62              None        None      
+63              None        None      
+64              None        None      
+65              None        None      
+66              None        None      
+67              None        None      
+68              None        None      
+69              None        None      
+70              None        None      
+71              None        None      
+8               None        None      
+2               None        None      
+9               None        None      
+11              None        None      
+10              None        None      
+12              None        None      
+13              None        None      
+14              None        None      
+15              None        None      
+16              None        None      
+17              None        None      
+18              None        None      
+19              None        None      
+6               None        None      
+20              None        None      
+21              None        None      
+22              None        None      
+23              None        None      
+24              None        None      
+25              None        None      
+26              None        None      
+27              None        None      
+28              None        None      
+29              None        None      
+42              None        None      
+7               None        None      
+43              None        None      
+44              None        None      
+45              None        None      
+46              None        None      
+47              None        None      
+48              None        None      
+49              None        None      
+50              None        None      
+51              None        None      
+53              None        None      
+52              None        None      
+54              None        None      
+55              None        None      
+56              None        None      
+57              None        None      
+58              None        None      
+59              None        None      
+60              None        None      
+61              None        None      
+[get_valid_containers] result_df: 
+    Part_Key  Containers  Part_Operation_Key    Part_No Revision  \
+30   2678456         1.0             9551918  SEA822882        A   
+31   2678456         1.0             9551918  SEA822882        A   
+32   2678456         1.0             9551918  SEA822882        A   
+33   2678456         1.0             9551918  SEA822882        A   
+34   2678456         1.0             9551918  SEA822882        A   
+
+               Name       Operation_Code  Operation_No Material_Key Heat_Key  \
+30  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+31  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+32  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+33  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+34  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+
+   Serial_No Card_No Material_Code Heat_Code Heat_No  Quantity  Net_Weight  \
+30  V1808665    None          None      None    None    2000.0         4.0   
+31  V1808674    None          None      None    None    2000.0         4.0   
+32  V1808696    None          None      None    None    2000.0         4.0   
+33  V1808730    None          None      None    None    2000.0         4.0   
+34  V1808775    None          None      None    None    2000.0         4.0   
+
+        Location Container_Type Container_Status Note  \
+30  Warehouse-08                              OK        
+31  Warehouse-08                              OK        
+32  Warehouse-08                              OK        
+33  Warehouse-08                              OK        
+34  Warehouse-08                              OK        
+
+    Shipper_Container_Exists Lot_No         Operation_Type Defect_Type  \
+30                         0         Production-Simplified               
+31                         0         Production-Simplified               
+32                         0         Production-Simplified               
+33                         0         Production-Simplified               
+34                         0         Production-Simplified               
+
+                                              Program  Active Job_No    Color  \
+30  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+31  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+32  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+33  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+34  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+
+   Unit  Job_Key Customer_Part_No        Part_Name Tracking_No Linear_Weight  \
+30   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+31   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+32   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+33   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+34   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+
+   Expiration_Date Accounting_Job_No Accounting_Job_Status  \
+30            None              None                  None   
+31            None              None                  None   
+32            None              None                  None   
+33            None              None                  None   
+34            None              None                  None   
+
+   Accounting_Job_Status_Color              Add_Date  Inventory_Type  \
+30                        None  2025-02-25T09:37:00Z           False   
+31                        None  2025-02-25T09:45:00Z           False   
+32                        None  2025-02-25T10:22:00Z           False   
+33                        None  2025-02-25T10:49:00Z           False   
+34                        None  2025-02-25T11:31:00Z           False   
+
+   Job_Template  Job_Template_No Job_Template_Status Supplier_Code  \
+30                            -1                                     
+31                            -1                                     
+32                            -1                                     
+33                            -1                                     
+34                            -1                                     
+
+    Job_Allocation_Key  Part_Count  Master_Unit_Key Master_Unit_No  \
+30                  -1           0       10436543.0        M043739   
+31                  -1           0       10436543.0        M043739   
+32                  -1           0       10436543.0        M043739   
+33                  -1           0       10436543.0        M043739   
+34                  -1           0       10436543.0        M043739   
+
+   Manufactured_Date Piece_Count EUN  cumulative  
+30              None        None          2000.0  
+31              None        None          4000.0  
+32              None        None          6000.0  
+33              None        None          8000.0  
+34              None        None         10000.0  
+[get_valid_containers] all_containers: 
+    Part_Key  Containers  Part_Operation_Key    Part_No Revision  \
+30   2678456         1.0             9551918  SEA822882        A   
+31   2678456         1.0             9551918  SEA822882        A   
+32   2678456         1.0             9551918  SEA822882        A   
+33   2678456         1.0             9551918  SEA822882        A   
+34   2678456         1.0             9551918  SEA822882        A   
+35   2678456         1.0             9551918  SEA822882        A   
+36   2678456         1.0             9551918  SEA822882        A   
+37   2678456         1.0             9551918  SEA822882        A   
+38   2678456         1.0             9551918  SEA822882        A   
+39   2678456         1.0             9551918  SEA822882        A   
+40   2678456         1.0             9551918  SEA822882        A   
+41   2678456         1.0             9551918  SEA822882        A   
+62   2678456         1.0             9551918  SEA822882        A   
+63   2678456         1.0             9551918  SEA822882        A   
+64   2678456         1.0             9551918  SEA822882        A   
+65   2678456         1.0             9551918  SEA822882        A   
+66   2678456         1.0             9551918  SEA822882        A   
+67   2678456         1.0             9551918  SEA822882        A   
+68   2678456         1.0             9551918  SEA822882        A   
+69   2678456         1.0             9551918  SEA822882        A   
+70   2678456         1.0             9551918  SEA822882        A   
+71   2678456         1.0             9551918  SEA822882        A   
+
+               Name       Operation_Code  Operation_No Material_Key Heat_Key  \
+30  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+31  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+32  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+33  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+34  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+35  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+36  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+37  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+38  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+39  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+40  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+41  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+62  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+63  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+64  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+65  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+66  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+67  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+68  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+69  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+70  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+71  GIMP SHORT SEAL  Inspect/Pack (Simp)            40         None     None   
+
+   Serial_No Card_No Material_Code Heat_Code Heat_No  Quantity  Net_Weight  \
+30  V1808665    None          None      None    None    2000.0         4.0   
+31  V1808674    None          None      None    None    2000.0         4.0   
+32  V1808696    None          None      None    None    2000.0         4.0   
+33  V1808730    None          None      None    None    2000.0         4.0   
+34  V1808775    None          None      None    None    2000.0         4.0   
+35  V1808848    None          None      None    None    2000.0         4.0   
+36  V1808849    None          None      None    None    2000.0         4.0   
+37  V1808878    None          None      None    None    2000.0         4.0   
+38  V1808999    None          None      None    None    2000.0         4.0   
+39  V1809288    None          None      None    None    2000.0         4.0   
+40  V1809318    None          None      None    None    2000.0         4.0   
+41  V1809348    None          None      None    None    2000.0         4.0   
+62  V1809397    None          None      None    None    2000.0         4.0   
+63  V1809413    None          None      None    None    2000.0         4.0   
+64  V1809468    None          None      None    None    2000.0         4.0   
+65  V1809534    None          None      None    None    2000.0         4.0   
+66  V1809630    None          None      None    None    2000.0         4.0   
+67  V1809677    None          None      None    None    2000.0         4.0   
+68  V1809687    None          None      None    None    2000.0         4.0   
+69  V1809759    None          None      None    None    2000.0         4.0   
+70  V1809789    None          None      None    None    2000.0         4.0   
+71  V1809806    None          None      None    None    2000.0         4.0   
+
+        Location Container_Type Container_Status Note  \
+30  Warehouse-08                              OK        
+31  Warehouse-08                              OK        
+32  Warehouse-08                              OK        
+33  Warehouse-08                              OK        
+34  Warehouse-08                              OK        
+35  Warehouse-08                              OK        
+36  Warehouse-08                              OK        
+37  Warehouse-08                              OK        
+38  Warehouse-08                              OK        
+39  Warehouse-08                              OK        
+40  Warehouse-08                              OK        
+41  Warehouse-08                              OK        
+62  Warehouse-08                              OK        
+63  Warehouse-08                              OK        
+64  Warehouse-08                              OK        
+65  Warehouse-08                              OK        
+66  Warehouse-08                              OK        
+67  Warehouse-08                              OK        
+68  Warehouse-08                              OK        
+69  Warehouse-08                              OK        
+70  Warehouse-08                              OK        
+71  Warehouse-08                              OK        
+
+    Shipper_Container_Exists Lot_No         Operation_Type Defect_Type  \
+30                         0         Production-Simplified               
+31                         0         Production-Simplified               
+32                         0         Production-Simplified               
+33                         0         Production-Simplified               
+34                         0         Production-Simplified               
+35                         0         Production-Simplified               
+36                         0         Production-Simplified               
+37                         0         Production-Simplified               
+38                         0         Production-Simplified               
+39                         0         Production-Simplified               
+40                         0         Production-Simplified               
+41                         0         Production-Simplified               
+62                         0         Production-Simplified               
+63                         0         Production-Simplified               
+64                         0         Production-Simplified               
+65                         0         Production-Simplified               
+66                         0         Production-Simplified               
+67                         0         Production-Simplified               
+68                         0         Production-Simplified               
+69                         0         Production-Simplified               
+70                         0         Production-Simplified               
+71                         0         Production-Simplified               
+
+                                              Program  Active Job_No    Color  \
+30  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+31  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+32  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+33  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+34  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+35  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+36  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+37  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+38  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+39  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+40  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+41  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+62  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+63  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+64  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+65  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+66  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+67  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+68  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+69  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+70  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+71  ../Modules/IntegratedTechnologies/BarCoding/La...       1  32104  #D2F3CF   
+
+   Unit  Job_Key Customer_Part_No        Part_Name Tracking_No Linear_Weight  \
+30   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+31   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+32   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+33   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+34   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+35   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+36   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+37   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+38   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+39   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+40   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+41   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+62   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+63   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+64   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+65   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+66   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+67   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+68   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+69   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+70   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+71   Ea  9958383     INOAC CANADA  GIMP SHORT SEAL      250225          None   
+
+   Expiration_Date Accounting_Job_No Accounting_Job_Status  \
+30            None              None                  None   
+31            None              None                  None   
+32            None              None                  None   
+33            None              None                  None   
+34            None              None                  None   
+35            None              None                  None   
+36            None              None                  None   
+37            None              None                  None   
+38            None              None                  None   
+39            None              None                  None   
+40            None              None                  None   
+41            None              None                  None   
+62            None              None                  None   
+63            None              None                  None   
+64            None              None                  None   
+65            None              None                  None   
+66            None              None                  None   
+67            None              None                  None   
+68            None              None                  None   
+69            None              None                  None   
+70            None              None                  None   
+71            None              None                  None   
+
+   Accounting_Job_Status_Color              Add_Date  Inventory_Type  \
+30                        None  2025-02-25T09:37:00Z           False   
+31                        None  2025-02-25T09:45:00Z           False   
+32                        None  2025-02-25T10:22:00Z           False   
+33                        None  2025-02-25T10:49:00Z           False   
+34                        None  2025-02-25T11:31:00Z           False   
+35                        None  2025-02-25T12:34:00Z           False   
+36                        None  2025-02-25T12:34:00Z           False   
+37                        None  2025-02-25T13:04:00Z           False   
+38                        None  2025-02-25T14:31:00Z           False   
+39                        None  2025-02-25T17:40:00Z           False   
+40                        None  2025-02-25T18:05:00Z           False   
+41                        None  2025-02-25T18:29:00Z           False   
+62                        None  2025-02-25T19:00:00Z           False   
+63                        None  2025-02-25T19:15:00Z           False   
+64                        None  2025-02-25T19:18:00Z           False   
+65                        None  2025-02-25T19:20:00Z           False   
+66                        None  2025-02-25T19:47:00Z           False   
+67                        None  2025-02-25T20:29:00Z           False   
+68                        None  2025-02-25T20:41:00Z           False   
+69                        None  2025-02-25T21:14:00Z           False   
+70                        None  2025-02-25T21:47:00Z           False   
+71                        None  2025-02-25T22:18:00Z           False   
+
+   Job_Template  Job_Template_No Job_Template_Status Supplier_Code  \
+30                            -1                                     
+31                            -1                                     
+32                            -1                                     
+33                            -1                                     
+34                            -1                                     
+35                            -1                                     
+36                            -1                                     
+37                            -1                                     
+38                            -1                                     
+39                            -1                                     
+40                            -1                                     
+41                            -1                                     
+62                            -1                                     
+63                            -1                                     
+64                            -1                                     
+65                            -1                                     
+66                            -1                                     
+67                            -1                                     
+68                            -1                                     
+69                            -1                                     
+70                            -1                                     
+71                            -1                                     
+
+    Job_Allocation_Key  Part_Count  Master_Unit_Key Master_Unit_No  \
+30                  -1           0       10436543.0        M043739   
+31                  -1           0       10436543.0        M043739   
+32                  -1           0       10436543.0        M043739   
+33                  -1           0       10436543.0        M043739   
+34                  -1           0       10436543.0        M043739   
+35                  -1           0       10436543.0        M043739   
+36                  -1           0       10436543.0        M043739   
+37                  -1           0       10436543.0        M043739   
+38                  -1           0       10436543.0        M043739   
+39                  -1           0       10436543.0        M043739   
+40                  -1           0       10436543.0        M043739   
+41                  -1           0       10436543.0        M043739   
+62                  -1           0       10436543.0        M043739   
+63                  -1           0       10436543.0        M043739   
+64                  -1           0       10436543.0        M043739   
+65                  -1           0       10436543.0        M043739   
+66                  -1           0       10436543.0        M043739   
+67                  -1           0       10436543.0        M043739   
+68                  -1           0       10436543.0        M043739   
+69                  -1           0       10436543.0        M043739   
+70                  -1           0       10436543.0        M043739   
+71                  -1           0       10436543.0        M043739   
+
+   Manufactured_Date Piece_Count EUN  cumulative  
+30              None        None          2000.0  
+31              None        None          4000.0  
+32              None        None          6000.0  
+33              None        None          8000.0  
+34              None        None         10000.0  
+35              None        None         12000.0  
+36              None        None         14000.0  
+37              None        None         16000.0  
+38              None        None         18000.0  
+39              None        None         20000.0  
+40              None        None         22000.0  
+41              None        None         24000.0  
+62              None        None         26000.0  
+63              None        None         28000.0  
+64              None        None         30000.0  
+65              None        None         32000.0  
+66              None        None         34000.0  
+67              None        None         36000.0  
+68              None        None         38000.0  
+69              None        None         40000.0  
+70              None        None         42000.0  
+71              None        None         44000.0  
+---------------------------------------------------------------
+None

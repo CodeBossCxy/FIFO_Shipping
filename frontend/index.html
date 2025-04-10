@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Vintech Shipping Scanner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="container">
-        <img class="logo" src="assets/Vintech_Logo.jpg" />
-        <div class="box-shipper-background"></div>
-        <div class="main-panel"></div>
-        <div class="shipper-input-block" data-state="Default">
-            <div class="label">Shipper No:</div>
-            <div class="input-box">
-                <div class="placeholder">Type or Scan here</div>
+    <div class="container-fluid">
+        <img src="assets/Vintech_Logo.jpg" class="logo-fixed" alt="Vintech Logo"/>
+        <div class="position-fixed start-50 translate-middle-x mt-3 p-4 bg-white rounded shadow" style="top:30px; width: 80%; max-width: 500px;">
+            <h4 class="mb-2 text-center">Shipper No:</h4>
+            <div class="d-flex justify-content-center">
+                <input type="text" class="form-control w-75" placeholder="Type here or Scan..." />
             </div>
-            <div id="shipper_list"></div>
         </div>
-        <div class="ok-button-background"></div>
-        <div class="ok-text">OK</div>
+        <div id="shipper-table-container">
+        </div>
     </div>
     <script src="script.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

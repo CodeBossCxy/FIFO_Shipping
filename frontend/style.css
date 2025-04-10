@@ -12,12 +12,11 @@ body, html {
     overflow: hidden;
 }
 
-.logo {
-    width: 258px;
-    height: 56px;
-    left: 134px;
-    top: 24px;
-    position: absolute;
+.logo-fixed {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    width: 130px;
 }
 
 .box-shipper-background {
@@ -101,4 +100,9 @@ body, html {
     font-weight: 700;
     line-height: 26px;
     word-wrap: break-word;
+}
+
+#shipper_list {
+    margin-top: 180px; /* Adjust based on floating container height */
+    padding: 1rem;
 }
