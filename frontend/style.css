@@ -102,7 +102,12 @@ body, html {
     word-wrap: break-word;
 }
 
-#shipper_list {
+#shipper-table-container {
     margin-top: 180px; /* Adjust based on floating container height */
     padding: 1rem;
+}
+
+td, th {
+    padding-right: 50px;
+    padding-bottom: 10px;
 }

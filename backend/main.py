@@ -12,11 +12,11 @@ from pydantic import BaseModel
 import pandas as pd
 
 app = FastAPI()
-templates = Jinja2Templates(directory="C:/Users/CChen/Quality/FIFO_Shipping/frontend")
+templates = Jinja2Templates(directory="frontend/")
 
 
 # Get absolute path to the frontend directory
-frontend_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../frontend"))
+frontend_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../frontend/"))
 
 if not os.path.exists(frontend_path):
     raise RuntimeError(f"Frontend directory not found at: {frontend_path}")
@@ -66,6 +66,9 @@ class ERPResponse(BaseModel):
     tables: List[TableModel]
     transactionNo: str
 
+
+class UserInput(BaseModel):
+    shipper_number: str
 
 
 
@@ -223,3 +226,16 @@ async def get_valid_shippers(request: Request):
     shipper_data = open_shippers[['Shipper_No', 'Customer_Code']].to_dict(orient="records")
     print(shipper_data)
     return JSONResponse(content=shipper_data)
+    # return templates.TemplateResponse("index.html", {"request": request, "shipper": shipper_data}) 
+
+
+
+@app.post("/api/get_shipper_containers")
+async def get_shipper_containers(input: UserInput):
+    print("[get_shipper_containers] input: ", input.shipper_number)
+    shipper_demand = get_shipper_details(input.shipper_number)
+    containers = get_valid_containers(shipper_demand)
+    print("[get_shipper_containers] containers: \n", containers)
+    # return JSONResponse(content=containers)
+
+
