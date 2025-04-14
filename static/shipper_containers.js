@@ -22,15 +22,18 @@ async function load_shipper_containers() {
             console.log(`-- part ${index + 1} --`);
             console.log(part[0].Status);
             if (part[0].Status == "Containers Available") {
-                table += `<tr style="background-color: #e0e0e0; font-weight: bold;"><td colspan="3">${part[0].Part_No}: </td></tr>`;
+                table += `<tr style="background-color: #e0e0e0; font-weight: bold; "><td colspan="3">${part[0].Part_No}: </td></tr>`;
                 part.forEach(container => {
                     container_to_scan += container.Serial_No;
                     table += `<tr><td>${container.Serial_No}</td><td>${container.Quantity}</td><td>${container.Location}</td></tr>`;
                 });
+                // table += <tr style="height: 20px;"><td></td></tr> 
             } else if (part[0].Status == "No Containers Available") {
                 table += `<tr style="background-color: #e0e0e0; font-weight: bold;"><td colspan="2">${part[0].Part_No}</td><td colspan="1">No Containers Available</td></tr>`;
+                // table += <tr style="height: 20px;"><td></td></tr> 
             } else if (part[0].Status == "Load Complete") {
                 table += `<tr style="background-color: #e0e0e0; font-weight: bold;"><td colspan="2">${part[0].Part_No}</td><td colspan="1">Part Loaded</td></tr>`;
+                // table += <tr style="height: 20px;"><td></td></tr> 
             }
         })
         table += '</tbody></table>';
@@ -45,6 +48,7 @@ async function load_shipper_containers() {
 
 function update_serial_no(serial_no) {
     console.log("[update_serial_no] serial_no: ", serial_no);
+    const shipper_number = document.querySelector('h1').textContent;
     fetch(`/shipper/scan/${serial_no}`,
         {
             method: 'POST',
@@ -52,7 +56,8 @@ function update_serial_no(serial_no) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                serial_no: serial_no
+                serial_no: serial_no,
+                shipper_number: shipper_number
             })
         }
     ).then(response => response.json()).then(data => {

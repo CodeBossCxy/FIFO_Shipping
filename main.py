@@ -161,7 +161,7 @@ def get_shipper_details(shipper: str) -> Dict[str, tuple[str, int, bool]]:
     #         temp = temp.drop(idx)
     shipper_demand = dict(zip(df['Part_Key'], zip(df['Part_No_Revision'], df['Quantity'], df['Load_complete'])))
     print("[get_shipper_details] shipper_demand: ", shipper_demand)
-    return shipper_demand
+    return shipper_demand, shipper_keys
 
 
 
@@ -219,10 +219,6 @@ def get_containers_by_part(shipper_demand: tuple[str, str]) -> pd.DataFrame:
             "Part_Key": shipper_demand[0]
         }
     })
-    headers = {
-    'Authorization': 'Basic VmludGVjaFdTQHBsZXguY29tOmE0Y2Q3OGEtZmUxMi00',
-    'Content-Type': 'application/json'
-    }
 
     response = requests.request("POST", url=url, headers=headers, data=payload)
     print(response.status_code)
@@ -248,6 +244,22 @@ def update_erp_with_load(shipper_number: str, container_serial: str) -> bool:
     return response.status_code == 200
 
 
+def send_to_erp_with_load(serial_no, shipper_key):
+    print("[send_to_erp_with_load] serial_no: ", serial_no)
+
+    load_container_id = "8512"
+    url = f"{ERP_API_BASE}{load_container_id}/execute"
+
+    payload = json.dumps({
+        "inputs": {
+            "Serial_No": serial_no,
+            "Shipper_Key": shipper_key
+        }
+    })
+
+    response = requests.request("POST", url=url, headers=headers, data=payload)
+    print("[send_to_erp_with_load] response: ", response.json())
+    return response.status_code == 200
 
 
 # --- API Routes ---
@@ -285,7 +297,7 @@ async def shipper_containers(request: Request, shipper_number: str):
 async def get_shipper_containers(request: Request, shipper_number: str):
     try:
         print("[get_shipper_containers] input: ", shipper_number)
-        shipper_demand = get_shipper_details(shipper_number)
+        shipper_demand, shipper_key = get_shipper_details(shipper_number)
         print("[get_shipper_containers] shipper_demand: ", shipper_demand)
         containers = []
         for key, value in shipper_demand.items():
@@ -300,3 +312,22 @@ async def get_shipper_containers(request: Request, shipper_number: str):
     except Exception as e:
         print("[get_shipper_containers] error: ", e)
         return JSONResponse(content={"error": str(e)})
+
+
+
+@app.post("/shipper/scan/{serial_no}")
+async def load_container(request: Request, serial_no: str):
+    data = await request.json()
+    print("[load_container] data: ", data)
+    serial_no = data.get("serial_no")
+    shipper_no = data.get("shipper_number")
+    shipper_key = shipper_no_to_keys(shipper_no)
+    try:
+        result = update_erp_with_load(serial_no, shipper_key)
+        if result:
+            return JSONResponse(content={"message": "Success"})
+        else:
+            return JSONResponse(content={"message": "Failed"})
+    except Exception as e:
+        print("[load_container] error: ", e)
+        return JSONResponse(content={"message": "Failed"})
