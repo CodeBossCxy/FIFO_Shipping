@@ -12,7 +12,7 @@ from pydantic import BaseModel
 import pandas as pd
 
 app = FastAPI()
-templates = Jinja2Templates(directory="templates/")
+templates = Jinja2Templates(directory="templates")
 
 
 # # Get absolute path to the frontend directory
