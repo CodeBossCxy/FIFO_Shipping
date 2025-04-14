@@ -130,7 +130,7 @@ def shipper_no_to_keys(shipper: str) -> str:
 
 
 
-def get_shipper_details(shipper: str) -> Dict[str, int]:
+def get_shipper_details(shipper: str) -> Dict[str, tuple[str, int, bool]]:
     shipper_details_id = "9278"
     url = f"{ERP_API_BASE}{shipper_details_id}/execute"
     print("[get_shipper_details] url: ", url)
@@ -154,44 +154,63 @@ def get_shipper_details(shipper: str) -> Dict[str, int]:
     columns = response.json().get("tables")[0].get("columns", [])
     rows = response.json().get("tables")[0].get("rows", [])
     df = pd.DataFrame(rows, columns=columns)
-    shipper_demand = dict(zip(df['Part_Key'], df['Quantity']))
+    df['Load_complete'] = (df['Quantity_Loaded'] == df['Quantity'])
+    # temp = df
+    # for idx, row in temp.iterrows():
+    #     if row['Quantity_Loaded'] == row['Quantity']:
+    #         temp = temp.drop(idx)
+    shipper_demand = dict(zip(df['Part_Key'], zip(df['Part_No_Revision'], df['Quantity'], df['Load_complete'])))
+    print("[get_shipper_details] shipper_demand: ", shipper_demand)
     return shipper_demand
 
 
 
 
 
-def get_valid_containers(shipper_demand: dict[str, int]) -> pd.DataFrame:
-    for demand in shipper_demand.items():
-        print("[get_valid_containers] demand: ", demand)
+def get_valid_containers(demand:tuple[str, tuple[str, int, bool]]) -> pd.DataFrame:
+    print("[get_valid_containers] demand: ", demand)
+    columns = ['Part_No', 'Serial_No', 'Quantity', 'Location', 'Status']
+    df = pd.DataFrame(columns=columns)
+    if demand[1][2]: # if load complete, skip
+        print('load complete')
+        new_row = {'Part_No': demand[1][0], 'Serial_No': '', 'Quantity': '', 'Location': '', 'Status': 'Load Complete'}
+        df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
+        return df
+    else:
         all_containers = get_containers_by_part(demand)
-        print("[get_valid_containers] all_containers: ")
-        print(all_containers)
+        if all_containers.empty: # if no containers available
+            print('no containers available')
+            new_row = {'Part_No': demand[1][0], 'Serial_No': '', 'Quantity': '', 'Location': '', 'Status': 'No Containers Available'}
+            df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
+            return df
+        print('containers available')
+        all_containers['Status'] = "Containers Available"
         all_containers['cumulative'] = all_containers['Quantity'].cumsum()
         # Filter rows where cumulative quantity is less than or equal to demand
-        result_df = all_containers[all_containers['cumulative'] <= demand[1]]
-        
+        result_df = all_containers[all_containers['cumulative'] <= demand[1][1]]
         # Include the first row that crosses the demand
-        if not result_df.empty and result_df['cumulative'].iloc[-1] < demand[1]:
-            next_row = all_containers.iloc[len(result_df)]
-            result_df = pd.concat([result_df, pd.DataFrame([next_row])], ignore_index=True)
+        if not result_df.empty and result_df['cumulative'].iloc[-1] < demand[1][1]:
+            if len(all_containers) == len(result_df):
+                return all_containers[['Part_No', 'Serial_No', 'Quantity', 'Location', 'Status']]
+            else:
+                next_row = all_containers.iloc[len(result_df)]
+                result_df = pd.concat([result_df, pd.DataFrame([next_row])], ignore_index=True)
         print("[get_valid_containers] result_df: ")
         print(result_df)
         # Drop the helper column if you don't want it
         result_df = result_df.drop(columns='cumulative')
         all_containers = all_containers[pd.to_datetime(all_containers['Add_Date']) < (pd.to_datetime(result_df['Add_Date'].iloc[-1]) + pd.Timedelta(days=3))]
         print("[get_valid_containers] all_containers: ")
+        
         print(all_containers)
         print("---------------------------------------------------------------")
-        return all_containers
+        print("demand[1][0], demand[1][1]: ", demand[1][0], demand[1][1])
+        return all_containers[['Part_No', 'Serial_No', 'Quantity', 'Location', 'Status']]
 
 
 
 
-def get_containers_by_part(shipper_demand: tuple[str, int]) -> pd.DataFrame:
-    containers_by_part_id = "8566"
-    url = f"{ERP_API_BASE}{containers_by_part_id}/execute"
-
+def get_containers_by_part(shipper_demand: tuple[str, str]) -> pd.DataFrame:
     containers_by_part_id = "8566"
     url = f"{ERP_API_BASE}{containers_by_part_id}/execute"
 
@@ -253,7 +272,6 @@ async def get_valid_shippers(request: Request):
     shipper_data = open_shippers[['Shipper_No', 'Customer_Code']].to_dict(orient="records")
     print(shipper_data)
     return JSONResponse(content=shipper_data)
-    # return templates.TemplateResponse("index.html", {"request": request, "shipper": shipper_data}) 
 
 
 
@@ -263,10 +281,22 @@ async def shipper_containers(request: Request, shipper_number: str):
 
 
 
-# @app.post("/shipper/{shipper_number}")
-# async def get_shipper_containers(request: Request, shipper_number: str):
-#     print("[get_shipper_containers] input: ", shipper_number)
-#     shipper_demand = get_shipper_details(shipper_number)
-#     containers = get_valid_containers(shipper_demand)
-#     print("[get_shipper_containers] containers: \n", containers)
-#     return JSONResponse(content=containers)
+@app.post("/shipper/{shipper_number}")
+async def get_shipper_containers(request: Request, shipper_number: str):
+    try:
+        print("[get_shipper_containers] input: ", shipper_number)
+        shipper_demand = get_shipper_details(shipper_number)
+        print("[get_shipper_containers] shipper_demand: ", shipper_demand)
+        containers = []
+        for key, value in shipper_demand.items():
+            c = get_valid_containers((key, value))
+            print("[get_shipper_containers] c: \n", c)
+            containers.append(c)
+        # continers, info = get_valid_containers(shipper_demand)
+        print("[get_shipper_containers] containers: \n", containers)
+        data = [df.to_dict(orient="records") for df in containers]
+        print("[get_shipper_containers] data: \n", data)
+        return JSONResponse(content={"dataframes": data})
+    except Exception as e:
+        print("[get_shipper_containers] error: ", e)
+        return JSONResponse(content={"error": str(e)})

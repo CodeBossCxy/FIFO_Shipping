@@ -1,0 +1,35 @@
+.logo-fixed {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    width: 130px;
+}
+
+.header {
+    display: flex;
+    /* justify-content: space-between; */
+}
+#scanner-input {
+    width: 200px;
+    height: 50px;
+    margin-top: 40px; 
+    /* padding-left: 20px; */
+    /* padding-top: 50px; */
+}
+#shipper-number {
+    padding-left: 20px;
+    padding-top: 50px;
+    margin-right: 20px;
+}
+#shipper-table-container {
+    padding-left: 20px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+}
+#shipper-table-container tr {
+    padding-bottom: 10px;
+}
+#shipper-table-container th, td {
+    padding-right: 20px;
+    /* padding-bottom: 20px; */
+}
