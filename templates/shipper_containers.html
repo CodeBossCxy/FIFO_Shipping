@@ -14,7 +14,9 @@
         <img src="{{ url_for('static', path='assets/Vintech_Logo.jpg')}}" class="logo-fixed" alt="Vintech Logo"/>
         <div class="header">
             <h1 id="shipper-number">{{ shipper_number|upper }}</h1>
-            <input id="scanner-input" type="text" placeholder="Scan the Serial No to load containers" />
+            <div id="shipper-number-form">
+                <input id="scanner-input" type="text" placeholder="Scan the Serial No to load containers" />
+            </div>
         </div>
         <div id="shipper-table-container">
         </div>

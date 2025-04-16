@@ -1,4 +1,5 @@
 var container_to_scan = [];
+var building_code = "";
 async function load_shipper_containers() {
     console.log("Successfully loaded");
     const shipper_number = document.querySelector('h1').textContent;
@@ -14,13 +15,14 @@ async function load_shipper_containers() {
         const containers = document.getElementById('shipper-table-container');
         console.log("data: \n", data);
         // console.log(typeof data);
-        let table = '<table>';
+        let table = '<table style="width: 100%;" display="block">';
         table += '<thead><tr><th>Serial No</th><th>Quantity</th><th>Location</th></tr></thead>';
         table += '<tbody>';
         console.log("data.dataframes: \n", data.dataframes);
         data.dataframes.forEach((part, index) => {
             console.log(`-- part ${index + 1} --`);
             console.log(part[0].Status);
+            building_code = part[0].Building_Code;
             if (part[0].Status == "Containers Available") {
                 table += `<tr style="background-color: #e0e0e0; font-weight: bold; "><td colspan="3">${part[0].Part_No}: </td></tr>`;
                 part.forEach(container => {
@@ -57,7 +59,8 @@ function update_serial_no(serial_no) {
             },
             body: JSON.stringify({
                 serial_no: serial_no,
-                shipper_number: shipper_number
+                shipper_number: shipper_number,
+                building_code: building_code
             })
         }
     ).then(response => response.json()).then(data => {
@@ -67,6 +70,7 @@ function update_serial_no(serial_no) {
         console.error('Error updating serial no:', error);
     });
 }
+
 
 function send_scanner_input() {
     const scanner_input = document.getElementById('scanner-input');
