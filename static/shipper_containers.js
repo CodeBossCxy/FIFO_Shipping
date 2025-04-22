@@ -104,6 +104,32 @@ function simulateScan(value) {
 // simulateScan("ABC12345");  // Call this in console to simulate a scan
 
 
+function get_master_containers(master_unit_no) {
+    console.log("[update_serial_no] master_unit_no: ", master_unit_no);
+    fetch(`/check/master_containers`,
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                master_unit_no: master_unit_no
+            })
+        }
+    ).then(response => response.json()).then(data => {
+        console.log("data: \n", data);
+        if(data.message == "Success") {
+            show_popup("Container scanned successfully", true);
+        } else {
+            show_popup("Issue, please check", false);
+        }
+    })
+    .catch(error => {
+        console.error('Error updating serial no:', error);
+    });
+}
+
+
 function send_scanner_input() {
     
     scanner_input.addEventListener('input', () => {
@@ -111,7 +137,10 @@ function send_scanner_input() {
         scanBuffer = scanner_input.value;
         scanTimeout = setTimeout(() => {
             console.log("scanBuffer: ", scanBuffer);
-            if (container_to_scan.includes(scanBuffer)) {
+            if (scnaBuffer[0] == "M"){
+                get_master_containers(scanBuffer);
+            }
+            else if (container_to_scan.includes(scanBuffer)) {
                 console.log("available container scanned: ",scanBuffer);
                 update_serial_no(scanner_input.value);
                 

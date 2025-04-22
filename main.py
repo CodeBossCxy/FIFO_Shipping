@@ -280,6 +280,24 @@ def send_to_erp_with_load(serial_no, shipper_key):
     return response.status_code == 200
 
 
+
+def get_master_containers(master_unit_no: str) -> List[str]:
+    master_containers_id = "230251"
+    url = f"{ERP_API_BASE}{master_containers_id}/execute"
+    payload = json.dumps({
+        "inputs": {
+            "Master_Unit_No": master_unit_no
+        }
+    })
+    response = requests.request("POST", url=url, headers=headers, data=payload)
+    print("[get_master_containers] response: ", response.json())
+    columns = response.json().get("tables")[0].get("columns", [])
+    rows = response.json().get("tables")[0].get("rows", [])
+    df = pd.DataFrame(rows, columns=columns)
+    print("[get_master_containers] df: ", df)
+    return df
+
+
 # --- API Routes ---
 @app.post("/test")
 def test():
@@ -360,3 +378,14 @@ async def load_container(request: Request, serial_no: str):
     except Exception as e:
         print("[load_container] error: ", e)
         return JSONResponse(content={"message": "Failed"})
+    
+
+@app.post("/check/master_containers")
+async def check_master_containers(request: Request, master_unit_no: str):
+    data = await request.json()
+    print("[load_container] data: ", data)
+    master_unit_no = data.get("master_unit_no")
+    print("[check_master_containers] master_unit_no: ", master_unit_no)
+    get_master_containers(master_unit_no)
+    return JSONResponse(content={"message": "Success"})
+
