@@ -16,10 +16,12 @@
             <h1 id="shipper-number">{{ shipper_number|upper }}</h1>
             <div id="shipper-number-form">
                 <input id="scanner-input" type="text" placeholder="Scan the Serial No to load containers" />
+                <div id="popup" style="display:none; position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#000; color:#fff; padding:10px; border-radius:5px;"></div>
             </div>
         </div>
-        <div id="shipper-table-container">
-        </div>
+        <div id="shipper-table-container"></div>
     </div>
+    <audio id="success-sound" src="/static/assets/success.mp3" preload="auto"></audio>
+    <audio id="error-sound" src="/static/assets/error.mp3" preload="auto"></audio>
     <script src="{{ url_for('static', path='shipper_containers.js') }}"></script>
 </body>
