@@ -103,42 +103,85 @@ function simulateScan(value) {
 }
 // simulateScan("ABC12345");  // Call this in console to simulate a scan
 
+async function get_master_containers(master_unit_no) {
+    // console.log("[get_master_containers] master_unit_no: ", master_unit_no);
+    // fetch(`/check/master_containers`,
+    //     {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({
+    //             master_unit_no: master_unit_no
+    //         })
+    //     }
+    // ).then(response => response.json()).then(data => {
+    //     console.log("data: \n", data);
+    // //     
+    // })
+    // .catch(error => {
+    //     console.error('Error updating serial no:', error);
+    // });
+    const myHeaders = new Headers();
+    myHeaders.append("Authorization", "Basic VmludGVjaFdTQHBsZXguY29tOmE0Y2Q3OGEtZmUxMi00");
+    myHeaders.append("Content-Type", "application/json");
 
-function get_master_containers(master_unit_no) {
-    console.log("[update_serial_no] master_unit_no: ", master_unit_no);
-    fetch(`/check/master_containers`,
+    const raw = JSON.stringify({
+        "inputs": {
+        "Master_Unit_No": master_unit_no
+        }
+    });
+
+    const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow"
+    };
+
+    fetch("https://Vintech.on.plex.com/api/datasources/12934/execute", requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.error(error));
+    }
+
+
+async function update_master_unit(master_unit_no) {
+    fetch(`/update/master_unit`,
         {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                master_unit_no: master_unit_no
+                master_unit_no: master_unit_no,
+                building_code: building_code
             })
         }
     ).then(response => response.json()).then(data => {
         console.log("data: \n", data);
-        if(data.message == "Success") {
-            show_popup("Container scanned successfully", true);
-        } else {
-            show_popup("Issue, please check", false);
-        }
-    })
+    })  
     .catch(error => {
-        console.error('Error updating serial no:', error);
+        console.error('Error updating master unit:', error);
     });
 }
 
-
-function send_scanner_input() {
-    
-    scanner_input.addEventListener('input', () => {
+async function send_scanner_input() {
+    scanner_input.addEventListener('input', async () => {
         clearTimeout(scanTimeout);
         scanBuffer = scanner_input.value;
-        scanTimeout = setTimeout(() => {
+        scanTimeout = setTimeout(async () => {
             console.log("scanBuffer: ", scanBuffer);
-            if (scnaBuffer[0] == "M"){
-                get_master_containers(scanBuffer);
+            if (scanBuffer[0] == "M"){
+                containers = await get_master_containers(scanBuffer)
+                containers.forEach(container => {
+                    if (!container_to_scan.includes(container)) {
+                        alert("Invalid container, violating FIFO policy");
+                    }
+                    else {
+                        update_master_unit(scanBuffer);
+                    }
+                })
             }
             else if (container_to_scan.includes(scanBuffer)) {
                 console.log("available container scanned: ",scanBuffer);
@@ -148,15 +191,6 @@ function send_scanner_input() {
                 alert("Invalid container, violating FIFO policy");
             }
         }, 1000);
-        // if (event.key === "Enter") {
-        //     event.preventDefault();
-        //     console.log("scanner_input: ", scanner_input.value);
-        // if (container_to_scan.includes(scanner_input.value)) {
-        //     console.log("available container scanned: ",scanner_input.value);
-        //     update_serial_no(scanner_input.value);
-        // } else { 
-        //     alert("Invalid container, violating FIFO policy");
-        // } 
     });
 }
 

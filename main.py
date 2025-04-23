@@ -70,8 +70,12 @@ class ERPResponse(BaseModel):
 class UserInput(BaseModel):
     shipper_number: str
 
+class MasterUnitRequest(BaseModel):
+    master_unit_no: str
 
-
+class MasterUnitInput(BaseModel):
+    master_unit_no: str
+    building_code: str
 
 # --- ERP Client ---
 def fetch_valid_shippers_from_erp(begin_date: datetime, end_date: datetime) -> List[str]:
@@ -261,6 +265,19 @@ def update_container_location(serial_no: str, location: str) -> bool:
     return response.status_code == 200
 
 
+def update_master_unit_location(master_unit_no: str, location: str) -> bool:
+    update_container_location_id = "24134"
+    url = f"{ERP_API_BASE}{update_container_location_id}/execute"
+
+    payload = json.dumps({
+    "inputs": {
+        "Location": location,
+        "Master_Unit_No": master_unit_no
+    }
+    })
+    response = requests.request("POST", url=url, headers=headers, data=payload)
+    print("[update_master_unit_location] response: ", response.json())
+    return response.status_code == 200
 
 def send_to_erp_with_load(serial_no, shipper_key):
     print("[send_to_erp_with_load] serial_no: ", serial_no)
@@ -282,7 +299,7 @@ def send_to_erp_with_load(serial_no, shipper_key):
 
 
 def get_master_containers(master_unit_no: str) -> List[str]:
-    master_containers_id = "230251"
+    master_containers_id = "12934"
     url = f"{ERP_API_BASE}{master_containers_id}/execute"
     payload = json.dumps({
         "inputs": {
@@ -291,11 +308,16 @@ def get_master_containers(master_unit_no: str) -> List[str]:
     })
     response = requests.request("POST", url=url, headers=headers, data=payload)
     print("[get_master_containers] response: ", response.json())
-    columns = response.json().get("tables")[0].get("columns", [])
-    rows = response.json().get("tables")[0].get("rows", [])
-    df = pd.DataFrame(rows, columns=columns)
-    print("[get_master_containers] df: ", df)
-    return df
+    print("--------------------------------")
+    print("[get_master_containers] response.json().get('tables')[0].get('rows', [])[0]: ", response.json().get("tables")[0].get("rows", [])[0])
+    containers = response.json().get("tables")[0].get("rows", [])[0][0]
+    serial_numbers = [s for s in containers.split(",") if s]
+    print("[get_master_containers] serial_numbers: ", serial_numbers)
+    return serial_numbers    # columns = response.json().get("tables")[0].get("columns", [])
+    # rows = response.json().get("tables")[0].get("rows", [])
+    # df = pd.DataFrame(rows, columns=columns)
+    # print("[get_master_containers] df: ", df)
+    # return df
 
 
 # --- API Routes ---
@@ -381,11 +403,38 @@ async def load_container(request: Request, serial_no: str):
     
 
 @app.post("/check/master_containers")
-async def check_master_containers(request: Request, master_unit_no: str):
+async def check_master_containers(request: Request):
     data = await request.json()
     print("[load_container] data: ", data)
     master_unit_no = data.get("master_unit_no")
     print("[check_master_containers] master_unit_no: ", master_unit_no)
-    get_master_containers(master_unit_no)
-    return JSONResponse(content={"message": "Success"})
+    containers = get_master_containers(master_unit_no)
+    return JSONResponse(content={"containers": containers})
 
+
+@app.post("/update/master_unit")
+async def update_master_unit(request: Request, master_unit_no: str):
+    data = await request.json()
+    print("[update_master_unit] data: ", data)
+    master_unit_no = data.get("master_unit_no")
+    print("[update_master_unit] master_unit_no: ", master_unit_no)
+    building_code = data.get("building_code")
+    print("[load_container] building_code: ", building_code)
+    # shipper_key = shipper_no_to_keys(shipper_no)
+    location = ""
+    if building_code == "Imlay":
+        location = "Shipping-Staging"
+    elif building_code == "IC West":
+        location = "Stage/Ship - IW"
+    elif building_code == "Almont":
+        location = "Stage/Ship - Almont"
+    print("[update_master_unit] location: ", location)
+    try:
+        result = update_master_unit_location(master_unit_no, location)
+        if result:
+            return JSONResponse(content={"message": "Success"})
+        else:
+            return JSONResponse(content={"message": "Failed"})
+    except Exception as e:
+        print("[update_master_unit] error: ", e)
+        return JSONResponse(content={"message": "Failed"})
