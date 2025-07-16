@@ -42,3 +42,11 @@ async function send_shipper_number_input() {
 
 load_shipper();
 send_shipper_number_input();
+
+// Set focus to the input field when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    const shipper_number_input = document.getElementById('shipper-number-input');
+    if (shipper_number_input) {
+        shipper_number_input.focus();
+    }
+});

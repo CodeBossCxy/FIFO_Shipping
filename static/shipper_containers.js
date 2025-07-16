@@ -219,3 +219,10 @@ const scanner_input = document.getElementById('scanner-input');
 
 load_shipper_containers();
 send_scanner_input();
+
+// Set focus to the scanner input field when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    if (scanner_input) {
+        scanner_input.focus();
+    }
+});
