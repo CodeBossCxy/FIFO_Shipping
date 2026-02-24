@@ -189,27 +189,11 @@ def get_valid_containers(demand:tuple[str, tuple[str, int, bool, str]]) -> pd.Da
             return df
         print('containers available')
         all_containers['Status'] = "Containers Available"
-        all_containers['cumulative'] = all_containers['Quantity'].cumsum()
-        # Filter rows where cumulative quantity is less than or equal to demand
         all_containers['Building_Code'] = demand[1][3]
-        result_df = all_containers[all_containers['cumulative'] <= demand[1][1]]
-        # Include the first row that crosses the demand
-        if not result_df.empty and result_df['cumulative'].iloc[-1] < demand[1][1]:
-            if len(all_containers) == len(result_df):
-                return all_containers[['Part_No', 'Serial_No', 'Quantity', 'Location', 'Status', 'Building_Code']]
-            else:
-                next_row = all_containers.iloc[len(result_df)]
-                result_df = pd.concat([result_df, pd.DataFrame([next_row])], ignore_index=True)
-        print("[get_valid_containers] result_df: ")
-        print(result_df)
-        # Drop the helper column if you don't want it
-        result_df = result_df.drop(columns='cumulative')
-        all_containers = all_containers[pd.to_datetime(all_containers['Add_Date']) < (pd.to_datetime(result_df['Add_Date'].iloc[-1]) + pd.Timedelta(days=3))]
-        print("[get_valid_containers] all_containers: ")
-        
+        oldest_date = pd.to_datetime(all_containers['Add_Date'].iloc[0])
+        all_containers = all_containers[pd.to_datetime(all_containers['Add_Date']) < (oldest_date + pd.Timedelta(days=3))]
+        print("[get_valid_containers] all_containers (3-day window): ")
         print(all_containers)
-        print("---------------------------------------------------------------")
-        print("demand[1][0], demand[1][1]: ", demand[1][0], demand[1][1])
         return all_containers[['Part_No', 'Serial_No', 'Quantity', 'Location', 'Status', 'Building_Code']]
 
 
@@ -413,7 +397,7 @@ async def check_master_containers(request: Request):
 
 
 @app.post("/update/master_unit")
-async def update_master_unit(request: Request, master_unit_no: str):
+async def update_master_unit(request: Request):
     data = await request.json()
     print("[update_master_unit] data: ", data)
     master_unit_no = data.get("master_unit_no")

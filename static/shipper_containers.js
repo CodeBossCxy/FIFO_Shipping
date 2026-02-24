@@ -27,7 +27,7 @@ async function load_shipper_containers() {
             if (part[0].Status == "Containers Available") {
                 table += `<tr style="background-color: #e0e0e0; font-weight: bold; "><td colspan="3">${part[0].Part_No}: </td></tr>`;
                 part.forEach(container => {
-                    container_to_scan += container.Serial_No;
+                    container_to_scan.push(container.Serial_No);
                     table += `<tr><td>${container.Serial_No}</td><td>${container.Quantity}</td><td>${container.Location}</td></tr>`;
                 });
                 // table += <tr style="height: 20px;"><td></td></tr> 
@@ -106,7 +106,7 @@ function simulateScan(value) {
 
 async function get_master_containers(master_unit_no) {
     console.log("[get_master_containers] master_unit_no: ", master_unit_no);
-    await fetch(`/check/master_containers`,
+    return await fetch(`/check/master_containers`,
         {
             method: 'POST',
             headers: {
@@ -190,14 +190,13 @@ async function send_scanner_input() {
                 try {
                     const container_list = await get_master_containers(scanBuffer)
                     console.log("container_list: ", container_list.containers);
-                    container_list.containers.forEach(container => {
-                    if (!container_to_scan.includes(container)) {
-                        alert("Invalid container, violating FIFO policy");
-                    }
-                    else {
+                    const invalidContainers = container_list.containers.filter(container => !container_to_scan.includes(container));
+                    if (invalidContainers.length === 0) {
                         update_master_unit(scanBuffer);
-                        }
-                    })
+                        show_popup("Master unit scanned successfully", true);
+                    } else {
+                        show_popup("FIFO violation: " + invalidContainers.join(", "), false);
+                    }
                 } catch (error) {
                     console.error('Error getting master unit:', error);
                 }
@@ -207,7 +206,7 @@ async function send_scanner_input() {
                 update_serial_no(scanner_input.value);
                 
             } else {
-                alert("Invalid container, violating FIFO policy");
+                show_popup("Invalid container, violating FIFO policy", false);
             }
         }, 1000);
     });
