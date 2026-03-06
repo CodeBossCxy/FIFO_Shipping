@@ -1,5 +1,54 @@
 var container_to_scan = [];
 var building_code = "";
+var adminMode = false;
+const ADMIN_PASSCODE = "vintech2026";
+
+function verifyPasscode() {
+    const input = document.getElementById('admin-passcode');
+    const error = document.getElementById('admin-error');
+    const btn = document.getElementById('admin-btn');
+    const modal = document.getElementById('admin-modal');
+    const title = document.getElementById('admin-modal-title');
+
+    if (adminMode) {
+        // Turning off admin mode
+        adminMode = false;
+        btn.classList.remove('active');
+        btn.textContent = 'Admin';
+        modal.style.display = 'none';
+        input.value = '';
+        error.style.display = 'none';
+        show_popup("Admin mode deactivated", true);
+        return;
+    }
+
+    if (input.value === ADMIN_PASSCODE) {
+        adminMode = true;
+        btn.classList.add('active');
+        btn.textContent = 'Admin';
+        modal.style.display = 'none';
+        input.value = '';
+        error.style.display = 'none';
+        show_popup("Admin mode activated - FIFO override enabled", true);
+    } else {
+        error.style.display = 'block';
+    }
+}
+
+document.getElementById('admin-btn').addEventListener('click', function() {
+    if (adminMode) {
+        // If already in admin mode, toggle off directly
+        adminMode = false;
+        this.classList.remove('active');
+        this.textContent = 'Admin';
+        show_popup("Admin mode deactivated", true);
+    } else {
+        document.getElementById('admin-modal').style.display = 'flex';
+        document.getElementById('admin-error').style.display = 'none';
+        document.getElementById('admin-passcode').value = '';
+        document.getElementById('admin-passcode').focus();
+    }
+});
 
 async function load_shipper_containers() {
     console.log("Successfully loaded");
@@ -190,10 +239,13 @@ async function send_scanner_input() {
                 try {
                     const container_list = await get_master_containers(scanBuffer)
                     console.log("container_list: ", container_list.containers);
-                    const invalidContainers = container_list.containers.filter(container => !container_to_scan.includes(container));
+                    const invalidContainers = container_list.containers.filter(container => !container_to_scan.find(serial => container.includes(serial)));
                     if (invalidContainers.length === 0) {
                         update_master_unit(scanBuffer);
                         show_popup("Master unit scanned successfully", true);
+                    } else if (adminMode) {
+                        update_master_unit(scanBuffer);
+                        show_popup("Admin override: master unit scanned", true);
                     } else {
                         show_popup("FIFO violation: " + invalidContainers.join(", "), false);
                     }
@@ -201,10 +253,15 @@ async function send_scanner_input() {
                     console.error('Error getting master unit:', error);
                 }
             }
-            else if (container_to_scan.includes(scanBuffer)) {
-                console.log("available container scanned: ",scanBuffer);
+            else if (container_to_scan.find(serial => scanBuffer.includes(serial))) {
+                const matched_serial = container_to_scan.find(serial => scanBuffer.includes(serial));
+                console.log("available container scanned: ", matched_serial);
+                update_serial_no(matched_serial);
+
+            } else if (adminMode) {
+                console.log("Admin override - scanning: ", scanBuffer);
                 update_serial_no(scanner_input.value);
-                
+                show_popup("Admin override: container scanned", true);
             } else {
                 show_popup("Invalid container, violating FIFO policy", false);
             }
