@@ -1,9 +1,8 @@
 var container_to_scan = [];
 var building_code = "";
 var adminMode = false;
-const ADMIN_PASSCODE = "vintech2026";
 
-function verifyPasscode() {
+async function verifyPasscode() {
     const input = document.getElementById('admin-passcode');
     const error = document.getElementById('admin-error');
     const btn = document.getElementById('admin-btn');
@@ -22,15 +21,26 @@ function verifyPasscode() {
         return;
     }
 
-    if (input.value === ADMIN_PASSCODE) {
-        adminMode = true;
-        btn.classList.add('active');
-        btn.textContent = 'Admin';
-        modal.style.display = 'none';
-        input.value = '';
-        error.style.display = 'none';
-        show_popup("Admin mode activated - FIFO override enabled", true);
-    } else {
+    try {
+        const response = await fetch(window.__BASE + '/verify-passcode', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ passcode: input.value })
+        });
+        const data = await response.json();
+        if (data.valid) {
+            adminMode = true;
+            btn.classList.add('active');
+            btn.textContent = 'Admin';
+            modal.style.display = 'none';
+            input.value = '';
+            error.style.display = 'none';
+            show_popup("Admin mode activated - FIFO override enabled", true);
+        } else {
+            error.style.display = 'block';
+        }
+    } catch (err) {
+        console.error('Error verifying passcode:', err);
         error.style.display = 'block';
     }
 }
@@ -54,7 +64,7 @@ async function load_shipper_containers() {
     console.log("Successfully loaded");
     const shipper_number = document.querySelector('h1').textContent;
     console.log("shipper_number: ", shipper_number);
-    fetch(`/shipper/${shipper_number}`,
+    fetch(`${window.__BASE}/shipper/${shipper_number}`,
         {
             method: 'POST',
             headers: {
@@ -101,7 +111,7 @@ async function load_shipper_containers() {
 function update_serial_no(serial_no) {
     console.log("[update_serial_no] serial_no: ", serial_no);
     const shipper_number = document.querySelector('h1').textContent;
-    fetch(`/shipper/scan/${serial_no}`,
+    fetch(`${window.__BASE}/shipper/scan/${serial_no}`,
         {
             method: 'POST',
             headers: {
@@ -155,7 +165,7 @@ function simulateScan(value) {
 
 async function get_master_containers(master_unit_no) {
     console.log("[get_master_containers] master_unit_no: ", master_unit_no);
-    return await fetch(`/check/master_containers`,
+    return await fetch(`${window.__BASE}/check/master_containers`,
         {
             method: 'POST',
             headers: {
@@ -210,7 +220,7 @@ async function get_master_containers(master_unit_no) {
 
 
 async function update_master_unit(master_unit_no) {
-    fetch(`/update/master_unit`,
+    fetch(`${window.__BASE}/update/master_unit`,
         {
             method: 'POST',
             headers: {

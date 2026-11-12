@@ -1,6 +1,6 @@
 async function load_shipper(){
     console.log("Successfully loaded");
-    fetch('/',
+    fetch(window.__BASE + '/',
         {
             method: 'POST',
             headers: {
@@ -13,7 +13,7 @@ async function load_shipper(){
         table += '<thead><tr><th>Shipper No</th><th>Customer Code</th></tr></thead>';
         table += '<tbody>';
         data.forEach(shipper => {
-            table += `<tr onclick="window.location.href='/shipper/${shipper.Shipper_No}'" style="cursor: pointer;"><td>${shipper.Shipper_No}</td><td>${shipper.Customer_Code}</td></tr>`;
+            table += `<tr onclick="window.location.href='${window.__BASE}/shipper/${shipper.Shipper_No}'" style="cursor: pointer;"><td>${shipper.Shipper_No}</td><td>${shipper.Customer_Code}</td></tr>`;
         });
         table += '</tbody></table>';
         container.innerHTML = table;
@@ -34,7 +34,7 @@ async function send_shipper_number_input() {
             event.preventDefault();
             console.log("shipper_number_input: ", shipper_number_input.value);
             // shipper_number_form.submit();
-            window.location.href = `/shipper/${encodeURIComponent(shipper_number_input.value)}`;
+            window.location.href = `${window.__BASE}/shipper/${encodeURIComponent(shipper_number_input.value)}`;
         }
     });
 }

@@ -1,36 +1,44 @@
 from fastapi import FastAPI, HTTPException, Request, Form
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse, JSONResponse, HTMLResponse
+from fastapi.responses import FileResponse, JSONResponse, HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 from typing import List
 import requests
 import os
 import json
+from dotenv import load_dotenv
+
+load_dotenv()
 from datetime import datetime, timedelta, timezone
 from typing import List, Dict, Any, Optional
 from pydantic import BaseModel
 import pandas as pd
 
-app = FastAPI()
+BASE_PATH = os.getenv("BASE_PATH", "")
+
+inner_app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
+inner_app.mount("/static", StaticFiles(directory="static", html=True), name="static")
 
-# # Get absolute path to the frontend directory
-# frontend_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../frontend/"))
-
-# if not os.path.exists(frontend_path):
-#     raise RuntimeError(f"Frontend directory not found at: {frontend_path}")
-
-app.mount("/static", StaticFiles(directory="static", html=True), name="static")
+app = FastAPI()
+if BASE_PATH:
+    @app.get(BASE_PATH)
+    async def redirect_to_trailing_slash():
+        return RedirectResponse(url=BASE_PATH + "/")
+    app.mount(BASE_PATH, inner_app)
+else:
+    app = inner_app
 
 
 
 # --- Config ---
-ERP_API_BASE = "https://Vintech.on.plex.com/api/datasources/"
+ERP_API_BASE = os.getenv("ERP_API_BASE")
 headers = {
-  'Authorization': 'Basic VmludGVjaFdTQHBsZXguY29tOmE0Y2Q3OGEtZmUxMi00',
+  'Authorization': os.getenv("ERP_AUTH_TOKEN"),
   'Content-Type': 'application/json'
 }
+ADMIN_PASSCODE = os.getenv("ADMIN_PASSCODE")
 
 now = datetime.today()
 
@@ -146,11 +154,6 @@ def get_shipper_details(shipper: str) -> Dict[str, tuple[str, int, bool, str]]:
     }
     })
     print("[get_shipper_details] payload: ", payload)
-    headers = {
-    'Authorization': 'Basic VmludGVjaFdTQHBsZXguY29tOmE0Y2Q3OGEtZmUxMi00',
-    'Content-Type': 'application/json'
-    }
-
     response = requests.request("POST", url=url, headers=headers, data=payload)
     print("[get_shipper_details] status code: ", response.status_code)
     print("[get_shipper_details] response: ", response.json())
@@ -305,17 +308,29 @@ def get_master_containers(master_unit_no: str) -> List[str]:
 
 
 # --- API Routes ---
-@app.post("/test")
+@inner_app.get("/health")
+def health():
+    return {"ok": True}
+
+@inner_app.post("/test")
 def test():
     return {"message": "Success"}
 
 
-@app.get("/", response_class=HTMLResponse)
+@inner_app.post("/verify-passcode")
+async def verify_passcode(request: Request):
+    data = await request.json()
+    if data.get("passcode") == ADMIN_PASSCODE:
+        return JSONResponse(content={"valid": True})
+    return JSONResponse(content={"valid": False})
+
+
+@inner_app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse("index.html", {"request": request, "base": BASE_PATH})
 
 
-@app.post("/", response_class=HTMLResponse)
+@inner_app.post("/", response_class=HTMLResponse)
 async def get_valid_shippers(request: Request):
     begin_date = now - timedelta(days = 31)
     end_date = now + timedelta(days = 31)
@@ -329,13 +344,13 @@ async def get_valid_shippers(request: Request):
 
 
 
-@app.get("/shipper/{shipper_number}", response_class=HTMLResponse)
+@inner_app.get("/shipper/{shipper_number}", response_class=HTMLResponse)
 async def shipper_containers(request: Request, shipper_number: str):
-    return templates.TemplateResponse("shipper_containers.html", {"request": request, "shipper_number": shipper_number})
+    return templates.TemplateResponse("shipper_containers.html", {"request": request, "shipper_number": shipper_number, "base": BASE_PATH})
 
 
 
-@app.post("/shipper/{shipper_number}")
+@inner_app.post("/shipper/{shipper_number}")
 async def get_shipper_containers(request: Request, shipper_number: str):
     try:
         print("[get_shipper_containers] input: ", shipper_number)
@@ -357,7 +372,7 @@ async def get_shipper_containers(request: Request, shipper_number: str):
 
 
 
-@app.post("/shipper/scan/{serial_no}")
+@inner_app.post("/shipper/scan/{serial_no}")
 async def load_container(request: Request, serial_no: str):
     data = await request.json()
     print("[load_container] data: ", data)
@@ -386,7 +401,7 @@ async def load_container(request: Request, serial_no: str):
         return JSONResponse(content={"message": "Failed"})
     
 
-@app.post("/check/master_containers")
+@inner_app.post("/check/master_containers")
 async def check_master_containers(request: Request):
     data = await request.json()
     print("[load_container] data: ", data)
@@ -396,7 +411,7 @@ async def check_master_containers(request: Request):
     return JSONResponse(content={"containers": containers})
 
 
-@app.post("/update/master_unit")
+@inner_app.post("/update/master_unit")
 async def update_master_unit(request: Request):
     data = await request.json()
     print("[update_master_unit] data: ", data)
